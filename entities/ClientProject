@@ -1,0 +1,88 @@
+{
+  "name": "ClientProject",
+  "type": "object",
+  "properties": {
+    "client_name": {
+      "type": "string",
+      "description": "Client or company name"
+    },
+    "client_email": {
+      "type": "string",
+      "description": "Client email (used to filter their projects)"
+    },
+    "project_title": {
+      "type": "string",
+      "description": "Name of the project"
+    },
+    "description": {
+      "type": "string",
+      "description": "Short project description"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Scoping",
+        "In Progress",
+        "Review",
+        "Completed",
+        "On Hold"
+      ],
+      "default": "Scoping"
+    },
+    "progress_percent": {
+      "type": "number",
+      "description": "Overall progress 0-100",
+      "default": 0
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Web",
+        "Robotics",
+        "Data",
+        "Research"
+      ],
+      "default": "Web"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "target_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "milestones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "done",
+              "active",
+              "upcoming"
+            ]
+          },
+          "date": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "team_lead": {
+      "type": "string",
+      "description": "Assigned team lead name"
+    }
+  },
+  "required": [
+    "client_name",
+    "client_email",
+    "project_title",
+    "status"
+  ]
+}

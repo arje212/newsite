@@ -1,0 +1,50 @@
+{
+  "name": "Deliverable",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string",
+      "description": "ID of the related ClientProject"
+    },
+    "client_email": {
+      "type": "string",
+      "description": "Client email for access control"
+    },
+    "title": {
+      "type": "string",
+      "description": "Deliverable title"
+    },
+    "description": {
+      "type": "string"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "Download URL"
+    },
+    "file_type": {
+      "type": "string",
+      "enum": [
+        "PDF",
+        "ZIP",
+        "Figma",
+        "Video",
+        "Spreadsheet",
+        "Other"
+      ],
+      "default": "PDF"
+    },
+    "version": {
+      "type": "string",
+      "default": "v1.0"
+    },
+    "is_final": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "project_id",
+    "client_email",
+    "title"
+  ]
+}

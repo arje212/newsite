@@ -1,0 +1,37 @@
+{
+  "name": "ProjectMessage",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string",
+      "description": "ID of the related ClientProject"
+    },
+    "sender_email": {
+      "type": "string",
+      "description": "Email of the sender"
+    },
+    "sender_name": {
+      "type": "string",
+      "description": "Display name of the sender"
+    },
+    "sender_role": {
+      "type": "string",
+      "enum": [
+        "client",
+        "team"
+      ],
+      "description": "Whether sender is a client or team member"
+    },
+    "message": {
+      "type": "string",
+      "description": "Message content"
+    }
+  },
+  "required": [
+    "project_id",
+    "sender_email",
+    "sender_name",
+    "sender_role",
+    "message"
+  ]
+}
