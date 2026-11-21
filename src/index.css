@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --font-heading: 'Manrope', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --background: 42 26% 94%;
+    --foreground: 145 14% 18%;
+    --card: 42 30% 98%;
+    --card-foreground: 145 14% 18%;
+    --popover: 42 30% 98%;
+    --popover-foreground: 145 14% 18%;
+    --primary: 145 15% 27%;
+    --primary-foreground: 42 30% 97%;
+    --secondary: 38 20% 88%;
+    --secondary-foreground: 145 14% 23%;
+    --muted: 38 17% 89%;
+    --muted-foreground: 145 7% 43%;
+    --accent: 17 39% 49%;
+    --accent-foreground: 42 30% 98%;
+    --destructive: 4 57% 48%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 38 16% 82%;
+    --input: 38 16% 82%;
+    --ring: 145 15% 27%;
+    --chart-1: 145 15% 27%;
+    --chart-2: 17 39% 49%;
+    --chart-3: 39 34% 56%;
+    --chart-4: 198 18% 47%;
+    --chart-5: 84 13% 49%;
+    --radius: 0.7rem;
+    --sidebar-background: 39 23% 91%;
+    --sidebar-foreground: 145 14% 18%;
+    --sidebar-primary: 145 15% 27%;
+    --sidebar-primary-foreground: 42 30% 97%;
+    --sidebar-accent: 38 17% 86%;
+    --sidebar-accent-foreground: 145 14% 23%;
+    --sidebar-border: 38 16% 82%;
+    --sidebar-ring: 145 15% 27%;
+  }
+
+  * { @apply border-border outline-ring/40; }
+  html { scroll-behavior: smooth; background: hsl(var(--background)); }
+  body {
+    @apply bg-background text-foreground;
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-feature-settings: 'ss01' on;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: hsl(17 39% 49% / .22); color: hsl(var(--foreground)); }
+  button, input, textarea, select { font: inherit; }
+}
+
+@layer utilities {
+  .text-glow-cyan, .text-glow-purple { text-shadow: none; }
+  .box-glow-cyan, .box-glow-purple { box-shadow: 0 8px 24px hsl(145 15% 27% / .10); }
+  .glass {
+    background: hsl(42 30% 98% / .78);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid hsl(38 16% 82% / .8);
+  }
+  .glass-strong {
+    background: hsl(42 30% 98% / .94);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    border: 1px solid hsl(38 16% 82% / .9);
+    box-shadow: 0 8px 28px hsl(145 14% 18% / .06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

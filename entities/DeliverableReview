@@ -1,0 +1,61 @@
+{
+  "name": "DeliverableReview",
+  "type": "object",
+  "properties": {
+    "deliverable_id": {
+      "type": "string",
+      "description": "ID of the related Deliverable"
+    },
+    "project_id": {
+      "type": "string",
+      "description": "ID of the related ClientProject"
+    },
+    "client_email": {
+      "type": "string",
+      "description": "Client email"
+    },
+    "client_name": {
+      "type": "string",
+      "description": "Client display name"
+    },
+    "deliverable_title": {
+      "type": "string",
+      "description": "Snapshot of deliverable title for easy display"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "Approved",
+        "Needs Changes"
+      ],
+      "description": "Client's decision on the deliverable"
+    },
+    "feedback": {
+      "type": "string",
+      "description": "Detailed feedback or change requests from the client"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Pending",
+        "Seen",
+        "Resolved"
+      ],
+      "default": "Pending",
+      "description": "Whether the team has acknowledged and resolved the review"
+    },
+    "team_response": {
+      "type": "string",
+      "description": "Optional response from the team lead"
+    }
+  },
+  "required": [
+    "deliverable_id",
+    "project_id",
+    "client_email",
+    "client_name",
+    "deliverable_title",
+    "decision",
+    "feedback"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "name": "ChangeRequest",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string",
+      "description": "ID of the related ClientProject"
+    },
+    "client_email": {
+      "type": "string"
+    },
+    "client_name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "description": "Short summary of the change"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed change request"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ],
+      "default": "Medium"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Submitted",
+        "Under Review",
+        "Approved",
+        "Rejected",
+        "Implemented"
+      ],
+      "default": "Submitted"
+    },
+    "admin_notes": {
+      "type": "string",
+      "description": "Response or notes from the team"
+    }
+  },
+  "required": [
+    "project_id",
+    "client_email",
+    "title",
+    "description"
+  ]
+}
